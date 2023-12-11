@@ -1,37 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-
-
+import axios from 'axios';
+import userEvent from '@testing-library/user-event';
 function App() {
-  const [InputData, setInputData]= useState()
-  const [items, setItems] = useState([])
-
-  const addItem =()=>{
-    setItems([...items, InputData])
-
-  }
-  const deleteAll=()=>{
-    setItems([])
-  }
-
-  return (
-    <div className="App">
-   < input  onChange={(e)=>setInputData(e.target.value)} value ={InputData} type='text'  placeholder='Enter your Todo' />
-   <button onClick={addItem}>Add Todo</button>
-   <button onClick={deleteAll}>delete Todo</button>
-   <div>
-    {
-      items.map((element,index)=>{
-        return(
-          <h1>{element}</h1>
-        )
-      })
-    }
-   </div>
-    </div>
+  const [user, setUser]= useState([])
+  useEffect(()=>{
+    axios.get("https://jsonplaceholder.typicode.com/posts").then((res)=>{
+      console.log(res)
+      setUser(res.data)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  },[])
+ 
+  return(
+    <>
+    
+    <h1>Api handaling in react js</h1>
+   {
+    user.map((element, index)=>{
+      <h1>{element.id}</h1>
+    })
+   }
+   
+    </>
   );
 }
-
 export default App;
