@@ -1,8 +1,65 @@
-h1{
-  text-align: center;
+body{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.navbarmainsection{
+  display: flex;
+  justify-content: space-between;
+  background-color: blue;
+  box-shadow: 2px;
 }
 
-.App{
-  /* display: flex; */
-  /* flex-direction: column; */
+.logonav{
+  color: white;
 }
+
+.menulink{
+  text-decoration: none;
+  padding: 0 10px;
+  color: white;
+}
+li{
+  list-style-type: none;
+}
+
+.navmenu{
+  display: flex;
+  align-items: center;
+}
+
+/* **==================Navbar style end here=============================** */
+
+
+/* **====================style of Homepage is start from here================** */
+
+
+
+.thisishomepage{
+  height: 80vh;
+  background-image: url('https://plus.unsplash.com/premium_photo-1666557391039-7b907997c7f1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOXx8fGVufDB8fHx8fA%3D%3D');
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+
+.Homepagemainsection{
+  display: flex;
+  justify-content: space-around;
+  height: 90vh;
+}
+.homepagemypic{
+ width: 400px;
+}
+.homepageaboutmetext{
+width: 600px;
+}
+
+
+
+
+
+
+
+
+
